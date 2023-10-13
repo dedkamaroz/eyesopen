@@ -1,10 +1,8 @@
-# EyesOpen: Advanced Image Forensic Analysis Toolkit
+# EyesOpen: Image Forensic Analysis Tool
 
 ## Introduction
 
-EyesOpen is a powerful image forensic analysis toolkit that empowers users to conduct in-depth examinations of digital images. In a world where digital manipulation is becoming increasingly sophisticated, EyesOpen provides a comprehensive set of tools and algorithms to uncover traces of manipulation or identify unique image characteristics.
-
-Whether you're a digital forensic investigator, a photographer, or anyone interested in understanding the authenticity of images, EyesOpen is your go-to solution. This README will guide you through the installation process and provide an overview of the various analysis methods available in the toolkit.
+EyesOpen is an image forensic analysis tool that empowers users to conduct in-depth examinations of digital images. In a world where digital manipulation is becoming increasingly sophisticated, EyesOpen aims to uncover traces of manipulation or identify unique image characteristics.
 
 ## Installation
 
@@ -12,36 +10,36 @@ To get started with EyesOpen, follow these installation steps:
 
 1. Clone the EyesOpen repository to your local machine:
 
-   ~~~bash
+   ```bash
    git clone https://github.com/Sublations/EyesOpen.git
-   ~~~
+   ```
 
 2. Navigate to the EyesOpen directory:
 
-   ~~~bash
+   ```bash
    cd EyesOpen
-   ~~~
+   ```
 
 3. Create a virtual environment and activate it (ensure you have Python 3.x installed):
 
-   ~~~bash
+   ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ~~~
+   ```
 
 4. Install the required Python packages:
 
-   ~~~bash
+   ```bash
    pip install -r requirements.txt
-   ~~~
+   ```
 
 ## Usage
 
 To analyze an image using EyesOpen, simply run the following command:
 
-~~~bash
+```bash
 python main.py path/to/image
-~~~
+```
 
 This will generate an image report saved as `analysis_report.png` in the same directory as your image.
 
@@ -70,6 +68,8 @@ Texture analysis aims to reveal inconsistencies in the texture patterns, which c
 This method focuses on highlighting the object boundaries within an image. Any tampering with an image, like object insertion or removal, often leaves irregular or broken edges. EyesOpen uses the Canny edge detection algorithm on a blurred grayscale image to highlight these edges. In the resulting image, pay attention to any irregular or fragmented edges as these could be telltale signs of image manipulation.
 
 ## Reporting
+
+![Sample Image](sample.jpg)
 
 EyesOpen generates comprehensive image analysis reports that include visualizations of the analyzed image, its ELA, Gabor-filtered image, frequency analysis results, texture analysis results, and advanced edge detection results. These reports are invaluable for forensic investigations or in-depth image examinations.
 
