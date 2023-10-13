@@ -43,6 +43,9 @@ python main.py path/to/image
 
 This will generate an image report saved as `analysis_report.png` in the same directory as your image.
 
+![Sample Image](sample.jpg)
+![Sample Image](analysis_report.png)
+
 ## Methods of Analysis
 
 EyesOpen offers a variety of advanced analysis methods to thoroughly examine digital images. Here's an overview of these methods:
@@ -66,16 +69,6 @@ Texture analysis aims to reveal inconsistencies in the texture patterns, which c
 ### Advanced Edge Detection
 
 This method focuses on highlighting the object boundaries within an image. Any tampering with an image, like object insertion or removal, often leaves irregular or broken edges. EyesOpen uses the Canny edge detection algorithm on a blurred grayscale image to highlight these edges. In the resulting image, pay attention to any irregular or fragmented edges as these could be telltale signs of image manipulation.
-
-## Reporting
-
-![Sample Image](sample.jpg)
-![Sample Image](analysis_report.png)
-EyesOpen generates comprehensive image analysis reports that include visualizations of the analyzed image, its ELA, Gabor-filtered image, frequency analysis results, texture analysis results, and advanced edge detection results. These reports are invaluable for forensic investigations or in-depth image examinations.
-
-## Contributing
-
-We welcome contributions from the open-source community to enhance the capabilities of EyesOpen. If you have ideas for new features, bug fixes, or improvements, please feel free to submit a pull request.
 
 ## License
 
