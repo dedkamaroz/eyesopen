@@ -70,7 +70,7 @@ This method focuses on highlighting the object boundaries within an image. Any t
 ## Reporting
 
 ![Sample Image](sample.jpg)
-
+![Sample Image](analysis_report.png)
 EyesOpen generates comprehensive image analysis reports that include visualizations of the analyzed image, its ELA, Gabor-filtered image, frequency analysis results, texture analysis results, and advanced edge detection results. These reports are invaluable for forensic investigations or in-depth image examinations.
 
 ## Contributing
