@@ -24,3 +24,6 @@ build/
 *.png
 *.jpg
 venv/
+EyesOpen.egg-info/
+dist/
+build/
