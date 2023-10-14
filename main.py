@@ -125,20 +125,31 @@ def main(image_path: str, args: argparse.Namespace) -> None:
             fourier_weight=args.fw,
         )
 
+        # Prepare specifications for each algorithm based on the parameters used.
+        specs = [
+            "Analysis done with EyesOpen tool on GitHub",  # Original image, no specs needed
+            f"Quality Levels - {args.ela_ql}, Amplification Factor - {args.ela_af}",
+            f"Frequency - {args.gf}, Theta - {args.gt}, Bandwidth - {args.gb}",
+            f"Lower Canny Threshold - {args.lct}, Upper Canny Threshold - {args.uct}",
+            f"Wavelet Type - {args.wt}, Fourier Weight - {args.fw}",
+            f"LBP Radius - {args.r}, LBP Points - {args.np}, LBP Method - {args.m}",
+        ]
+
+        # Annotations with a scientific tone
         annotations = [
-            "Original: Reference image.",
-            "ELA: Highlighted discrepancies can indicate tampering.",
-            "Gabor: Texture inconsistencies may flag manipulation.",
-            "Edges: Extra edges can hint at splicing.",
-            "Frequency: Spectrum anomalies may signal forgery.",
-            "Texture: Uneven patterns can suggest edits.",
+            "Original: Baseline for Comparative Analysis",
+            "ELA: Deviations in Error Levels for Tamper Detection",
+            "Gabor: Frequency-domain Texture Anomalies",
+            "Edges: Irregular Boundaries Suggestive of Splicing",
+            "Frequency: Spectral Inconsistencies for Forgery Identification",
+            "Texture: Local Binary Pattern Discrepancies Indicative of Editing",
         ]
 
         color_images = convert_to_color(images)
         standardized_images = standardize_dimensions(color_images)
 
         for i, img in enumerate(standardized_images):
-            annotate_image(img, annotations[i], "")
+            annotate_image(img, annotations[i], specs[i])
 
         row1 = np.hstack(standardized_images[:3])
         row2 = np.hstack(standardized_images[3:])

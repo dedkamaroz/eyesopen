@@ -58,10 +58,7 @@ def perform_ela(
 
 
 def perform_gabor_filtering(
-    image: np.ndarray, 
-    frequency: float = 0.6, 
-    theta: float = 0, 
-    bandwidth: float = 1.0
+    image: np.ndarray, frequency: float = 0.6, theta: float = 0, bandwidth: float = 1.0
 ) -> np.ndarray:
     """Perform Gabor filtering on an image.
 
@@ -109,9 +106,7 @@ def perform_gabor_filtering(
 
 
 def perform_frequency_analysis(
-    image: np.ndarray, 
-    wavelet_type: str = "haar", 
-    fourier_weight: float = 0.5
+    image: np.ndarray, wavelet_type: str = "haar", fourier_weight: float = 0.5
 ) -> np.ndarray:
     """
     Perform frequency analysis on an image using Fourier and Wavelet Transforms.
