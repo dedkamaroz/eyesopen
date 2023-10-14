@@ -4,8 +4,6 @@
 
 EyesOpen is a comprehensive image forensic analysis tool designed for professionals and enthusiasts alike. In today's world where digital tampering is becoming increasingly sophisticated, EyesOpen equips you with the tools needed to uncover traces of manipulation or to identify unique characteristics within digital images.
 
-![Sample Image](sample.jpg)
-
 ## Installation
 
 1. **Clone the Repository**
