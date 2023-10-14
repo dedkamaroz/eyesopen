@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "EyesOpen"
-version = "0.1.1"
+version = "0.1.2"
 authors = [{ name = "Sublations", email = "143057905+sublations@users.noreply.github.com" }]
 description = "A comprehensive image forensic analysis tool."
 readme = "README.md"
