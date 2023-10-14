@@ -14,12 +14,6 @@ EyesOpen is a comprehensive image forensic analysis tool designed for profession
    pip install eyesopen
    ```
 
-2. **Example Usage**
-
-   ```bash
-   EyesOpen /path/to/image/
-   ```
-
 ### From Source
 
 1. **Clone the Repository**
@@ -34,7 +28,7 @@ EyesOpen is a comprehensive image forensic analysis tool designed for profession
    cd EyesOpen
    ```
 
-3. **Create and Activate a Virtual Environment** (Python 3.x required)
+3. **Create and Activate a Virtual Environment** (Python 3.11 required)
 
    ```bash
    python3 -m venv venv
@@ -52,7 +46,7 @@ EyesOpen is a comprehensive image forensic analysis tool designed for profession
 The simplest way to use EyesOpen is to run the following command:
 
 ```bash
-python src/main.py path/to/image
+eyesopen path/to/image # Or python3 eyesopen/main.py path/to/image when building from src
 ```
 
 This will generate a comprehensive image report saved as `analysis_report.png` in the current directory.
@@ -68,7 +62,7 @@ EyesOpen offers a multitude of parameters for fine-grained control over each ana
 1. **Advanced Edge Detection with Custom Canny Thresholds**
 
    ```bash
-   python src/main.py path/to/image --lct 0.5 --uct 1.5
+   eyesopen path/to/image --lct 0.5 --uct 1.5
    ```
 
    Adjusting the Canny thresholds can help you detect faint or sharp edges more effectively.
@@ -76,7 +70,7 @@ EyesOpen offers a multitude of parameters for fine-grained control over each ana
 2. **Custom Gabor Filter Parameters**
 
    ```bash
-   python src/main.py path/to/image --gf 0.8 --gt 0.5 --gb 1.2
+   eyesopen path/to/image --gf 0.8 --gt 0.5 --gb 1.2
    ```
 
    Customize the Gabor filter to focus on specific frequencies and orientations in the image, aiding in texture discrimination.
@@ -84,7 +78,7 @@ EyesOpen offers a multitude of parameters for fine-grained control over each ana
 3. **Different Wavelet for Frequency Analysis**
 
    ```bash
-   python src/main.py path/to/image --wt db2
+   eyesopen path/to/image --wt db2
    ```
 
    Changing the wavelet type can highlight different frequency components, possibly revealing hidden tampering.
