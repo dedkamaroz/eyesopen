@@ -2,78 +2,101 @@
 
 ## Introduction
 
-EyesOpen is an image forensic analysis tool that empowers users to conduct in-depth examinations of digital images. In a world where digital manipulation is becoming increasingly sophisticated, EyesOpen aims to uncover traces of manipulation or identify unique image characteristics.
+EyesOpen is a comprehensive image forensic analysis tool designed for professionals and enthusiasts alike. In today's world where digital tampering is becoming increasingly sophisticated, EyesOpen equips you with the tools needed to uncover traces of manipulation or to identify unique characteristics within digital images.
+
+![Sample Image](sample.jpg)
 
 ## Installation
 
-To get started with EyesOpen, follow these installation steps:
-
-1. Clone the EyesOpen repository to your local machine:
+1. **Clone the Repository**
 
    ```bash
    git clone https://github.com/Sublations/EyesOpen.git
    ```
 
-2. Navigate to the EyesOpen directory:
+2. **Navigate to the Directory**
 
    ```bash
    cd EyesOpen
    ```
 
-3. Create a virtual environment and activate it (ensure you have Python 3.x installed):
+3. **Create and Activate a Virtual Environment** (Python 3.x required)
 
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    ```
 
-4. Install the required Python packages:
+4. **Install Dependencies**
 
    ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
+## Basic Usage
 
-To analyze an image using EyesOpen, simply run the following command:
+The simplest way to use EyesOpen is to run the following command:
 
 ```bash
 python main.py path/to/image
 ```
 
-This will generate an image report saved as `analysis_report.png` in the same directory as your image.
+This will generate a comprehensive image report saved as `analysis_report.png` in the current directory.
 
-![Sample Image](sample.jpg)
-![Sample Image](analysis_report.png)
+![Analysis Report](analysis_report.png)
 
-## Methods of Analysis
+## Advanced Usage
 
-EyesOpen offers a variety of advanced analysis methods to thoroughly examine digital images. Here's an overview of these methods:
+EyesOpen offers a multitude of parameters for fine-grained control over each analysis method. Understanding these parameters can help you tailor the tool to your specific needs.
 
-### Error Level Analysis (ELA)
+### Examples
 
-Error Level Analysis (ELA) is a technique used to reveal areas within an image that have different levels of compression or error rates. This can be a strong indicator of image manipulation. In EyesOpen, ELA is performed by comparing the original image with JPEG-compressed versions at different quality levels and highlighting the differences. Regions with differing brightness levels in the ELA image could signify tampering.
+1. **Advanced Edge Detection with Custom Canny Thresholds**
 
-### Gabor Filtering
+   ```bash
+   python main.py path/to/image --lct 0.5 --uct 1.5
+   ```
 
-Gabor filtering is employed to analyze the texture and frequency characteristics of an image. EyesOpen allows you to apply Gabor filtering to an image, highlighting features that may not be immediately visible. Adjust the frequency parameter to reveal different aspects of the image's texture.
+   Adjusting the Canny thresholds can help you detect faint or sharp edges more effectively.
 
-### Frequency Analysis
+2. **Custom Gabor Filter Parameters**
 
-Frequency analysis exposes the inherent frequency components of an image and can unveil hidden details or inconsistencies. EyesOpen applies a 2D Haar wavelet transform to the grayscale image to transition into the frequency domain. The resulting image will highlight frequency components; inconsistencies or noise in these components could be indicative of tampering.
+   ```bash
+   python main.py path/to/image --gf 0.8 --gt 0.5 --gb 1.2
+   ```
 
-### Texture Analysis
+   Customize the Gabor filter to focus on specific frequencies and orientations in the image, aiding in texture discrimination.
 
-Texture analysis aims to reveal inconsistencies in the texture patterns, which can occur due to cloning or airbrushing. EyesOpen employs the Local Binary Pattern (LBP) algorithm to perform this analysis. In the texture-analyzed image, look for areas where the texture suddenly changes or appears unnatural, as this could indicate tampering.
+3. **Different Wavelet for Frequency Analysis**
 
-### Advanced Edge Detection
+   ```bash
+   python main.py path/to/image --wt db2
+   ```
 
-This method focuses on highlighting the object boundaries within an image. Any tampering with an image, like object insertion or removal, often leaves irregular or broken edges. EyesOpen uses the Canny edge detection algorithm on a blurred grayscale image to highlight these edges. In the resulting image, pay attention to any irregular or fragmented edges as these could be telltale signs of image manipulation.
+   Changing the wavelet type can highlight different frequency components, possibly revealing hidden tampering.
+
+### Parameters
+
+- `--lct` and `--uct`: These adjust the lower and upper Canny thresholds for Edge Detection. Change these if the default settings either miss edges or detect too many irrelevant edges.
+
+- `--gf`, `--gt`, and `--gb`: These control the frequency, orientation, and bandwidth of the Gabor filter. Adjust these to focus on particular aspects of texture or frequency in the image.
+
+- `--wt`: Controls the type of wavelet used in Frequency Analysis. Different wavelets can highlight different aspects of the image's frequency components.
+
+- `--ela-ql` and `--ela-af`: Control the quality levels and amplification factor for Error Level Analysis (ELA). Different amplification factors and quality levels can make subtle tampering more obvious.
+
+## In-Depth Analysis Methods
+
+- **Error Level Analysis (ELA)**: ELA highlights differences in error levels across the image, which can indicate tampering. Areas of the image that have been altered may show different error levels than the rest of the image.
+
+- **Gabor Filtering**: This method is excellent for revealing hidden textures or patterns in an image. Adjusting parameters like frequency, theta, and bandwidth can help identify specific types of texture manipulation.
+
+- **Frequency Analysis**: This method highlights the frequency components of an image. A sudden noise or inconsistency in these components could indicate that the image has been tampered with.
+
+- **Texture Analysis**: Utilizes Local Binary Pattern (LBP) algorithms to identify inconsistencies in texture. These could occur due to cloning or airbrushing techniques.
+
+- **Advanced Edge Detection**: This focuses on identifying object boundaries. Tampering techniques like object insertion or removal often leave irregular or broken edges, which can be highlighted through this method.
 
 ## License
 
-EyesOpen is released under the [GNU GENERAL PUBLIC LICENSE V3](LICENSE).
-
----
-
-EyesOpen is developed and maintained by CIG.
+EyesOpen is released under the [GNU GENERAL PUBLIC LICENSE V3](LICENSE)
