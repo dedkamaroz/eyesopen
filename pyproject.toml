@@ -1,14 +1,10 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "EyesOpen"
-version = "0.1.2"
-authors = [{ name = "Sublations", email = "143057905+sublations@users.noreply.github.com" }]
-description = "A comprehensive image forensic analysis tool."
-readme = "README.md"
-license = { file = "LICENSE" }
+name = "eyesopen"
+version = "0.1.4"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -16,28 +12,6 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
 ]
-
-[project.scripts]
-eyesopen = 'src.main:main'
-
-[project.optional-dependencies]
-dev = [
-    "pytest>=6,<7",
-    "flake8>=3,<4",
-]
-
-[project.urls]
-homepage = "https://github.com/Sublations/EyesOpen"
-repository = "https://github.com/Sublations/EyesOpen"
-documentation = "https://github.com/Sublations/EyesOpen#readme"
-
-[options]
-python_requires = ">=3.6"
-
-[options.package_data]
-"" = ["requirements.txt", "README.md", "LICENSE"]
-
-[dependencies]
 dependencies = [
     "imageio==2.31.5",
     "lazy_loader==0.3",
@@ -50,5 +24,13 @@ dependencies = [
     "scikit-image==0.22.0",
     "scipy==1.11.3",
     "termcolor==2.3.0",
-    "tifffile==2023.9.26"
+    "tifffile==2023.9.26",
+    "click==8.1.7",
 ]
+
+[tool.setuptools.packages]
+find = {}
+
+[project.scripts]
+eyesopen = "eyesopen.main:main"
+

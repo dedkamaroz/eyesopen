@@ -7,7 +7,7 @@ from typing import List
 from scipy.fftpack import fftshift, fft2
 from skimage.feature import local_binary_pattern
 from skimage.filters import gabor
-from utilities import normalize_gray_image
+from eyesopen.utilities import normalize_gray_image
 
 # Initialize logging
 logging.basicConfig(

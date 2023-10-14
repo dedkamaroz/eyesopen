@@ -10,3 +10,4 @@ scikit-image==0.22.0
 scipy==1.11.3
 termcolor==2.3.0
 tifffile==2023.9.26
+click==8.1.7
